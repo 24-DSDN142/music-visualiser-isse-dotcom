@@ -158,11 +158,12 @@
 // }
 
 let backgd1, bckgd2;
+// tester? 
 
 function preload() {
   // Preload the two backgrounds
   backgd1 = loadImage('backgd1.png'); // Background for verse
-  bckgd2 = loadImage('backgd2.png'); // Background for chorus
+  bckgd2 = loadImage('backgd2.jpg'); // Background for chorus
 }
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
