@@ -157,25 +157,33 @@
 //   text(words, width / 2, height / 3);
 // }
 
-let backgd1, bckgd2;
+//et backgd1, bckgd2;
 // tester? 
 
-function preload() {
-  // Preload the two backgrounds
+// function preload() {
+//   // Preload the two backgrounds
+//   backgd1 = loadImage('backgd1.png'); // Background for verse
+//   bckgd2 = loadImage('backgd2.jpg'); // Background for chorus
+// }
+let backgd1;
+let bckgd2;
+let firstRun = true;
+function draw_one_frame(words, vocal, drum, bass, other, counter) {
+if(firstRun){
   backgd1 = loadImage('backgd1.png'); // Background for verse
-  bckgd2 = loadImage('backgd2.jpg'); // Background for chorus
+   bckgd2 = loadImage('backgd2.jpg'); // Background for chorus
+  firstRun = false
 }
 
-function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textFont('Brush Script MT'); // Soft and romantic font
   rectMode(CENTER);
   textSize(24);
 
   // Transition between backgrounds for verse/chorus
   if (counter % 2 === 0) {
-    background(backgd1); // Verse background
+    image(backgd1,0,0); // Verse background
   } else {
-    background(bckgd2); // Chorus background
+    image(bckgd2,0,0); // Chorus background
   }
 
   // Heavenly glow-like organic shapes reacting to vocals
